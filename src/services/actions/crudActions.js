@@ -8,7 +8,7 @@ import {
 const Create = (data) => {
   return {
     type: addBook,
-    payload: data
+    payload: data,
   };
 };
 const Read = () => {
@@ -19,12 +19,13 @@ const Read = () => {
 const Update = (UpdatedValue) => {
   return {
     type: editBook,
-    payload: UpdatedValue
+    payload: UpdatedValue,
   };
 };
-const Delete = () => {
+const Delete = (value) => {
   return {
     type: deleteBook,
+    payload: value,
   };
 };
 

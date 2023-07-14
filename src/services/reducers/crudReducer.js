@@ -37,7 +37,10 @@ const crudReducer = (state = initialBooks, action) => {
       return;
 
     case deleteBook:
-      return;
+      return {
+        ...state,
+        books: [...state.books.filter((book) => book.id !== action.payload)],
+      };
 
     case editBook:
       return;

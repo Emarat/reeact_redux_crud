@@ -1,9 +1,14 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { Delete } from '../services/actions/crudActions';
 
 const ViewBook = () => {
   const books = useSelector((state) => state.books);
-  console.log(typeof books);
+  // console.log(typeof books);
+  const dispatch = useDispatch();
+  const handleDelete = (id) => {
+    dispatch(Delete(id));
+  };
   return (
     <div>
       <h2>List of Books</h2>
@@ -27,7 +32,7 @@ const ViewBook = () => {
                   <td>{author}</td>
                   <td>
                     <button>Edit</button>
-                    <button>Delete</button>
+                    <button onClick={() => handleDelete(id)}>Delete</button>
                   </td>
                 </tr>
               );
