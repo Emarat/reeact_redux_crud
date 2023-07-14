@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 const ViewBook = () => {
   const books = useSelector((state) => state.books);
-  console.log(books);
+  console.log(typeof books);
   return (
     <div>
       <h2>List of Books</h2>

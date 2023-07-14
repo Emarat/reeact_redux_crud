@@ -28,7 +28,10 @@ const initialBooks = {
 const crudReducer = (state = initialBooks, action) => {
   switch (action.type) {
     case addBook:
-      return;
+      return {
+        ...state,
+        books: [...state.books, action.payload],
+      };
 
     case viewBook:
       return;
