@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Delete } from '../services/actions/crudActions';
+import { Link } from 'react-router-dom';
 
 const ViewBook = () => {
   const books = useSelector((state) => state.books);
@@ -31,7 +32,9 @@ const ViewBook = () => {
                   <td>{title}</td>
                   <td>{author}</td>
                   <td>
-                    <button>Edit</button>
+                    <Link to='/edit-book' state={{ id, title, author }}>
+                      <button>Edit</button>
+                    </Link>
                     <button onClick={() => handleDelete(id)}>Delete</button>
                   </td>
                 </tr>

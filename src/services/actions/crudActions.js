@@ -16,10 +16,10 @@ const Read = () => {
     type: viewBook,
   };
 };
-const Update = (UpdatedValue) => {
+const Update = (value) => {
   return {
     type: editBook,
-    payload: UpdatedValue,
+    payload: value,
   };
 };
 const Delete = (value) => {
